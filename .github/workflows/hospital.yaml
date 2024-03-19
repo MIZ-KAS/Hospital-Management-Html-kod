@@ -38,4 +38,4 @@ jobs:
             docker stop hospital || true
             docker rm hospital || true
             sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/hospital:${{ github.sha }}
-            sudo docker run -d --name hospital -p 80:80 ${{ secrets.DOCKERHUB_USERNAME }}/hospital:${{ github.sha }}
+            sudo docker run -d --name hospital -p 8001:80 ${{ secrets.DOCKERHUB_USERNAME }}/hospital:${{ github.sha }}
